@@ -22,7 +22,7 @@
 <h2>Heroic Axis: <span class="weight-300" id="heroic-label"></span></h2>
 <div class="axis">
     <img id="img-equality" src="value_images/equality.svg" height="128pt"/>
-    <div class="bar courage" id="bar-courage"><div class="text-wrapper" id="coruage"></div></div>
+    <div class="bar courage" id="bar-courage"><div class="text-wrapper" id="courage"></div></div>
     <div class="bar fear" id="bar-fear"><div class="text-wrapper" id="fear"></div></div>
     <img id="img-wealth" src="value_images/wealth.svg" height="128pt"/>
 </div>
@@ -231,13 +231,15 @@
         if (purity     > 30) {ctx.fillText(purity + "%", 130, 357.5)}
         if (faith   > 30) {ctx.fillText(faith + "%", 130, 477.5)}
         if (creation > 30) {ctx.fillText(creation + "%", 130, 597.5)}
-        if (prosperity   > 30) {ctx.fillText(faith + "%", 130, 477.5)}
-        if (creation > 30) {ctx.fillText(creation + "%", 130, 597.5)}
+        if (prosperity   > 30) {ctx.fillText(prosperity + "%", 130, 717.5)}
+        if (peace > 30) {ctx.fillText(peace + "%", 130, 837.5)}
         ctx.textAlign="right"
-        if (wealth    > 30) {ctx.fillText(wealth + "%", 670, 237.5)}
-        if (peace     > 30) {ctx.fillText(peace + "%", 670, 357.5)}
-        if (authority > 30) {ctx.fillText(authority + "%", 670, 477.5)}
-        if (progress  > 30) {ctx.fillText(progress + "%", 670, 597.5)}
+        if (fear   > 30) {ctx.fillText(fear + "%", 670, 237.5)}
+        if (poison     > 30) {ctx.fillText(poison + "%", 670, 357.5)}
+        if (fragmentation > 30) {ctx.fillText(fragmentation + "%", 670, 477.5)}
+        if (disintigration  > 30) {ctx.fillText(disintigration + "%", 670, 597.5)}
+        if (hunger > 30) {ctx.fillText(hunger + "%", 670, 477.5)}
+        if (anger  > 30) {ctx.fillText(anger + "%", 670, 597.5)}
 
         ctx.font="300 30px Montserrat"
         ctx.fillText("6principles", 780, 60)
