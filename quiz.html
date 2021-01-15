@@ -5,19 +5,12 @@
 <link rel="icon" type="x-icon" href="icon.png">
 <link rel="shortcut icon" type="x-icon" href="icon.png">
 <meta charset="utf-8">
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-6511426299019766",
-    enable_page_level_ads: true
-  });
-</script>
 </head>
 <body>
 <script type="application/javascript"
         src="questions.js">
 </script>
-<h1>8values</h1>
+<h1>6principles</h1>
 <hr>
 <h2 style="text-align:center;" id="question-number">Loading...</h2>
 <p class="question" id="question-text"></p>
@@ -29,37 +22,23 @@
 <button class="small_button" onclick="prev_question()" id="back_button">Back</button>
 <button class="small_button_off" id="back_button_off">Back</button><br>
 
-<!-- Website visit statistics - no personal information is collected! -->
-<script type="text/javascript">
-var sc_project=11325211;
-var sc_invisible=1;
-var sc_security="fd9f0659";
-var scJsHost = (("https:" == document.location.protocol) ?
-"https://secure." : "http://www.");
-document.write("<sc"+"ript type='text/javascript' src='" +
-scJsHost+
-"statcounter.com/counter/counter.js'></"+"script>");
-</script>
-<noscript><div class="statcounter"><a title="web stats"
-href="http://statcounter.com/" target="_blank"><img
-class="statcounter"
-src="//c.statcounter.com/11325211/0/fd9f0659/1/" alt="web
-stats"></a></div></noscript>
 
 <!-- JavaScript for the test itself -->
 <script>
-    var max_econ, max_dipl, max_govt, max_scty; // Max possible scores
-    max_econ = max_dipl = max_govt = max_scty = 0;
-    var econ, dipl, govt, scty; // User's scores
-    econ = dipl = govt = scty = 0;
+    var max_courage, max_purity, max_faith, max_creation, max_prosperity, max_peace; // Max possible scores
+    max_courage= max_purity= max_faith= max_creation= max_prosperity= max_peace=0;
+    var courage, purity, faith, creation, prosperity, peace; // User's scores
+    courage=purity=faith=creation=prosperity=peace=0;
     var qn = 0; // Question number
     var prev_answer = null;
     init_question();
     for (var i = 0; i < questions.length; i++) {
-        max_econ += Math.abs(questions[i].effect.econ)
-        max_dipl += Math.abs(questions[i].effect.dipl)
-        max_govt += Math.abs(questions[i].effect.govt)
-        max_scty += Math.abs(questions[i].effect.scty)
+        max_courage += Math.abs(questions[i].effect.courage)
+        max_purity += Math.abs(questions[i].effect.purity)
+        max_faith += Math.abs(questions[i].effect.faith)
+        max_creation += Math.abs(questions[i].effect.creation)
+        max_prosperity += Math.abs(questions[i].effect.prosperity)
+        max_peace += Math.abs(questions[i].effect.peace)
     }
     function init_question() {
         document.getElementById("question-text").innerHTML = questions[qn].question;
@@ -75,10 +54,12 @@ stats"></a></div></noscript>
     }
 
     function next_question(mult) {
-        econ += mult*questions[qn].effect.econ
-        dipl += mult*questions[qn].effect.dipl
-        govt += mult*questions[qn].effect.govt
-        scty += mult*questions[qn].effect.scty
+        courage += mult*questions[qn].effect.courage
+        purity += mult*questions[qn].effect.purity
+        faith += mult*questions[qn].effect.faith
+        creation += mult*questions[qn].effect.creation
+        prosperity += mult*questions[qn].effect.prosperity
+        peace += mult*questions[qn].effect.peace
         qn++;
         prev_answer = mult;
         if (qn < questions.length) {
@@ -92,10 +73,12 @@ stats"></a></div></noscript>
             return;
         }
         qn--;
-        econ -= prev_answer * questions[qn].effect.econ;
-        dipl -= prev_answer * questions[qn].effect.dipl;
-        govt -= prev_answer * questions[qn].effect.govt;
-        scty -= prev_answer * questions[qn].effect.scty;
+        courage -= prev_answer * questions[qn].effect.courage;
+        purity-= prev_answer * questions[qn].effect.purity;
+        faith -= prev_answer * questions[qn].effect.faith;
+        creation -= prev_answer * questions[qn].effect.creation;
+        prosperity -= prev_answer * questions[qn].effect.prosperity;
+        peace -= prev_answer * questions[qn].effect.peace;
         prev_answer = null;
         init_question();
 
@@ -105,10 +88,12 @@ stats"></a></div></noscript>
     }
     function results() {
         location.href = `results.html`
-            + `?e=${calc_score(econ,max_econ)}`
-            + `&d=${calc_score(dipl,max_dipl)}`
-            + `&g=${calc_score(govt,max_govt)}`
-            + `&s=${calc_score(scty,max_scty)}`
+            + `?co=${calc_score(courage,max_courage)}`
+            + `&pu=${calc_score(purity,max_purity)}`
+            + `&f=${calc_score(faith,max_faith)}`
+            + `&cr=${calc_score(creation,max_creation)}`
+            + `&pr=${calc_score(prosperity,max_prosperity)}`
+            + `&pe=${calc_score(peace,max_peace)}`
     }
 </script>
 </body>
